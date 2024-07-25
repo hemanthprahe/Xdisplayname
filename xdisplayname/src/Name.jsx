@@ -48,7 +48,9 @@ const Name = () => {
         </p>
         <button type='submit' value='Submit' onClick={handleSubmit}>Submit</button>
         </form>
-        <p>Full Name: {fullName}</p>
+        {fullName && <p>Full Name: {fullName}</p>}
+
+{/*         <p>Full Name: {fullName}</p> */}
     </div>
   )
 }
