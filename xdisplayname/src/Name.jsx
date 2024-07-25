@@ -15,19 +15,33 @@ const Name = () => {
         setLastName(event.target.value);
     };
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        if(firstName.trim() === '' && lastName.trim() === ''){
-          setError("Please fill out this field")
-        }
-        else if(firstName.trim() === '' || lastName.trim() === ''){
-            setError("Please fill out this field")
-        }
-        else{
-            setError("")
-            setFullName(`${firstName} ${lastName}`)
-        }
+    // const handleSubmit = (e)=>{
+    //     e.preventDefault()
+    //     if(firstName.trim() === '' && lastName.trim() === ''){
+    //       setError("Please fill out this field")
+    //     }
+    //     else if(firstName.trim() === '' || lastName.trim() === ''){
+    //         setError("Please fill out this field")
+    //     }
+    //     else{
+    //         setError("")
+    //         setFullName(`${firstName} ${lastName}`)
+    //     }
         
+    // }
+
+     const handleSubmit = (e) => {
+        e.preventDefault();
+        if (firstName.trim() === '' && lastName.trim() === '') {
+            setError("Please fill out both fields");
+            setFullName("");
+        } else if (firstName.trim() === '' || lastName.trim() === '') {
+            setError("Please fill out this field");
+            setFullName("");
+        } else {
+            setError("");
+            setFullName(`${firstName} ${lastName}`);
+        }
     }
 
   return (
